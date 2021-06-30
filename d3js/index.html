@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <style>
+      .bar1 {
+        fill: steelblue;
+        opacity: 0.5;
+      }
+
+      .bar2 {
+        fill: gray;
+        opacity: 0.5;
+      }
+
+      .bar1:hover {
+        fill: brown;
+      }
+
+      .axis {
+        font: 10px sans-serif;
+      }
+
+      .axis path,
+      .axis line {
+        fill: none;
+        stroke: #000;
+        shape-rendering: crispEdges;
+      }
+
+      .x.axis path {
+        display: none;
+      }
+    </style>
+
+  </head>
+  <body>
+
+    <p>Air quality csv-to-json data</p>
+
+  <!-- JS works on loaded DOM elements and shall be at html page bottom
+  data-url in div container is a custom attribute to store the path
+  that will be used to load the chart data. -->
+  <!-- <p>OS json data</p>
+  <div id="dturl-container" data-url="https://raw.githubusercontent.com/rpalloni/dataset/master/os_endpoint.json"></div>
+  <div id="dturl-printer"></div>
+    <script>
+      $.ajax({
+        url: $("#dturl-container").attr("data-url"),
+        dataType: "json",
+        success: function (data) {
+          //console.log(data);
+          var d = JSON.stringify(data)
+          document.getElementById('dturl-printer').innerHTML = `Data url: ${ d }`;
+        }
+      });
+    </script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+    <script type="text/javascript" src='fetch.js'></script>
+  </body>
+</html>

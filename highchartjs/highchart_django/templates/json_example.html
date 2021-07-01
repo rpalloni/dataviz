@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Django Highcharts Example</title>
+    <script src="https://code.highcharts.com/highcharts.src.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  </head>
+  <body>
+    <a href="{% url 'home' %}">Return to homepage</a>
+
+    <!-- The div with id container below is where the chart is going to be rendered.
+    It has a custom attribute named data-url to store the path to the view in views.py
+    that will be used to load the chart data.
+    Inside the ajax call:
+    - url: request based on the URL provided in the data-url;
+    - dataType: instruct the ajax request that we are expecting a JSON object in return;
+    - success: when the request completes, the JSON response will be inside the data parameter:
+        -> render the chart using the Highcharts API;
+        -> print the chart data in the div with id printer. -->
+
+    <div id="container" data-url="{% url 'chart-data' %}"></div>
+    <div id="printer"></div>
+
+    <!-- JS works on loaded DOM elements and shall be at html page bottom -->
+    <script>
+      $.ajax({
+        url: $("#container").attr("data-url"),
+        dataType: 'json',
+        success: function (data) {
+          Highcharts.chart("container", data);
+          //console.log(data['series'][0]);
+          var d = JSON.stringify(data['series'][0]);
+          document.getElementById('printer').innerHTML = `Chart data: ${ d }`;
+        }
+      });
+    </script>
+  </body>
+</html>

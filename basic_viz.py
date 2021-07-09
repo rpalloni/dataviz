@@ -28,3 +28,15 @@ ax.boxplot((ozone, solar, wind), vert=False, showmeans=True, meanline=True,
            meanprops={'linewidth': 2, 'color': 'red'})
 plt.show()
 
+# histogram
+fig, ax = plt.subplots()
+ax.hist(ozone, bins=20, cumulative=False)
+ax.set_xlabel('x')
+ax.set_ylabel('Frequency')
+plt.show()
+
+fig, ax = plt.subplots()
+ax.hist(ozone, bins=20, cumulative=True)
+ax.set_xlabel('x')
+ax.set_ylabel('Frequency')
+plt.show()

@@ -40,3 +40,11 @@ ax.hist(ozone, bins=20, cumulative=True)
 ax.set_xlabel('x')
 ax.set_ylabel('Frequency')
 plt.show()
+
+# bars
+fig, ax = plt.subplots()
+ax.bar(ozone, wind) # barh() horizontal
+ax.set_xlabel('ozone')
+ax.set_ylabel('wind')
+plt.show()
+

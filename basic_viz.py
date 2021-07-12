@@ -48,3 +48,15 @@ ax.set_xlabel('ozone')
 ax.set_ylabel('wind')
 plt.show()
 
+# scatterplot
+slope, intercept, r, *__ = scipy.stats.linregress(solar, ozone)
+line = f'Regression line: y={intercept:.2f}+{slope:.2f}x, r={r:.2f}'
+
+fig, ax = plt.subplots()
+ax.plot(solar, ozone, linewidth=0, marker='s', label='Data points')
+ax.plot(solar, intercept + slope * solar, label=line)
+ax.set_xlabel('solar')
+ax.set_ylabel('ozone')
+ax.legend(facecolor='white')
+plt.show()
+

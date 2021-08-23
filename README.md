@@ -1,5 +1,5 @@
 # dataviz
-Data visualization
+### Data visualization
 
 * d3js
 * highchartjs

@@ -1,6 +1,9 @@
 # dataviz
 ### Data visualization
 
+A collection of JS and python plots
+
+Tools:
 * d3js
 * highchartjs
 * cgi

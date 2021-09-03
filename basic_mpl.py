@@ -1,12 +1,14 @@
-
 import matplotlib.pyplot as plt
-import numpy as npfig,axs = plt.subplots(figsize=(15,7)) 
+import numpy as np
 
+# random series
 data1 = np.random.normal(0,1,100)
 data2 = np.random.normal(0,1,100)
 data3 = np.random.normal(0,1,100)
 x_ax = np.arange(0,100,10)
 y_ax = np.arange(-3,3,1)
+
+fig,axs = plt.subplots(figsize=(15,7))
 axs.plot(data1,marker="o")
 axs.plot(data2,marker="*")
 axs.plot(data3,marker="^")
